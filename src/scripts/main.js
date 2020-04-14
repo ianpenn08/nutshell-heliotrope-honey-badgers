@@ -1,3 +1,3 @@
-import { render } from "./register/welcome.js";
+import { renderLogin } from "./register/welcome.js";
 
-render()
+renderLogin()
