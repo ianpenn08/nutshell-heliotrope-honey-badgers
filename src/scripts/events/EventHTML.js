@@ -8,7 +8,7 @@ export const Event = (eventObject) => {
 			<h2>${eventObject.name}</h2>
 			<div>${eventObject.date}</div>
             <div>${eventObject.location}</div>
-            <button id="deleteEvent--${eventObject.id}>Delete Event</button>
+            <button id="deleteEvent--${eventObject.id}">Delete Event</button>
 		</section>
 	`	
 }
