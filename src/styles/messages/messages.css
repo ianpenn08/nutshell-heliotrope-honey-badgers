@@ -1,0 +1,19 @@
+.messagesContainer {
+  width: 30vw;
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+}
+
+.username {
+  margin: 5px 50px 0 0;
+}
+
+.messageInputContainer {
+  display: flex;
+  width: 30vw;
+}
