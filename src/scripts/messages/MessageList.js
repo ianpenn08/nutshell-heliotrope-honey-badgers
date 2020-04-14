@@ -16,12 +16,10 @@ const render = () => {
 
   contentTarget.innerHTML = `
 
-  ${users
-    .map((user) => {
-      const foundMessage = messages.find(
-        (message) => message.userId === user.id
-      )
-      return MessageHTML(foundMessage, user)
+  ${messages
+    .map((message) => {
+      let foundUser = users.find((user) => user.id === message.userId)
+      return MessageHTML(message, foundUser)
     })
     .join('')}
 
@@ -32,8 +30,9 @@ const render = () => {
 eventHub.addEventListener('sendMessageButtonClicked', (event) => {
   if ('message' in event.detail) {
     const newMessage = {
-      userId: sessionStorage.activeUser,
+      userId: parseInt(sessionStorage.activeUser),
       message: event.detail.message,
+      timestamp: new Date().getTime(),
     }
     saveNewMessage(newMessage)
   }
