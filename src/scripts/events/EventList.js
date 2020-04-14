@@ -2,6 +2,7 @@
 //The purpose of this module is to display events stored in the database
 
 import { useEvents } from "./eventProvider.js"
+import { Event } from "./EventHTML.js"
 
 //Function to display events
 
