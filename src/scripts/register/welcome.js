@@ -11,9 +11,14 @@ export const renderLogin = () => {
   const allUsers = getSavedUsers()
 
   eventHub.addEventListener('userChosen', (event) => {
-    if (event.detail.user === allUsers && event.detail.userPassword) {
+    const foundUser = allUsers.find(user => user.userName === event.detail.user)
     
-      
+    console.log(foundUser)
+
+    if(foundUser !== null) {
+      if(foundUser.password === event.detail.password){
+        
+      }
     }
   })
 };
