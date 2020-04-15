@@ -1,5 +1,5 @@
 // Author: Ian Penn
-// Purpose: create a dialog with save and back button and htmk reprsenation of new article
+// Purpose: create a dialog with save and back button and html reprsenation of new article
 
 
 
@@ -11,19 +11,19 @@ export const newArticle = () => {
     contentTarget.innerHTML = `
     <button type="button" id="newArticleButton">New Article</button>
    <dialog id="newArticleForm">
-        <fieldset class="onTop">
+        <fieldset class="newArticle">
             <label for="title">Title</label>
             <input type="text" name="title" id="title">
         </fieldset>
-        <fieldset class="onTop">
+        <fieldset class="newArticle">
             <label for="synopsis">Synopsis</label>
-            <textarea name="" id="synopsis" cols="10" rows="4"></textarea>
+            <textarea name="" id="synopsis" cols="15" rows="5"></textarea>
         </fieldset>
-        <fieldset class="onTop">
+        <fieldset class="newArticle">
             <label for="website">Website</label>
-            <input type="url" name="website" id="website">
+            <input type="url" name="website" id="website" value="url">
         </fieldset>
-        <button type="submit" id="articleSaveButton">Save event</button>
+        <button type="submit" id="articleSaveButton">Save Article</button>
         <button type="button" id="backButton">Back</button>
        </dialog>
        
