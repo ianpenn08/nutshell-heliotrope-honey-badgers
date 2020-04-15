@@ -1,7 +1,11 @@
 .messagesContainer {
   width: 30vw;
   max-height: 200px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: visible;
+  border: 1px solid darkorchid;
+  padding: 5px;
+  background-color: #eee;
 }
 
 .message {
@@ -15,5 +19,23 @@
 
 .messageInputContainer {
   display: flex;
-  width: 30vw;
+  flex-direction: row;
+  width: 31vw;
+}
+
+.messageInputContainer__messagingSection {
+  width: 31vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+#messageInput {
+  width: 25vw;
+  height: 25px;
+  margin: 5px 18px 5px 0;
+}
+
+#sendMessageButton {
+  height: 30px;
+  margin: 5px 2px 5px auto;
 }

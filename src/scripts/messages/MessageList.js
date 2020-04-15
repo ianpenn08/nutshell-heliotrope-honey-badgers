@@ -40,4 +40,5 @@ eventHub.addEventListener('sendMessageButtonClicked', (event) => {
 
 eventHub.addEventListener('messageStateChanged', () => {
   render()
+  messagecontentTarget.scrollTop = messagecontentTarget.scrollHeight
 })
