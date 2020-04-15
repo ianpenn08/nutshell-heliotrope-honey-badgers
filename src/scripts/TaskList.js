@@ -1,3 +1,4 @@
+// Author: Blake Slochowsky
 import { useTasks, deleteTask, getTasks, saveTask, updateTask } from "./TaskProvider.js"
 import { TaskComponent } from "./TaskHTML.js"
 import { TaskForm } from "./TaskForm.js"
@@ -9,7 +10,7 @@ const addButtonTarget = document.querySelector(".addTaskButtonContainer")
 eventHub.addEventListener("click", deleteClickEvent => {
     if (deleteClickEvent.target.id.startsWith("deleteTask--")) {
         const [prefix, id] = deleteClickEvent.target.id.split("--")
-        
+
         deleteTask(id).then(() => render(getTasks()))
     }
 })

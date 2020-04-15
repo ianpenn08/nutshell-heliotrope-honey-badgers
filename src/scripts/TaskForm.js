@@ -1,3 +1,4 @@
+// Author: Blake Slochowsky
 const contentTarget = document.querySelector(".taskForm")
 const eventHub = document.querySelector(".container")
 

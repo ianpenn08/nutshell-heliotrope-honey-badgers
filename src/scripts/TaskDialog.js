@@ -1,3 +1,4 @@
+// Author: Blake Slochowsky
 export const TaskDialog = () => {
 
 const contentTarget = document.querySelector(".container")

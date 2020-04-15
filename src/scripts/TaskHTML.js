@@ -1,3 +1,4 @@
+// Author: Blake Slochowsky
 export const TaskComponent = tasks => {
     console.log("Indivudual OBJECT", tasks)
     return `
