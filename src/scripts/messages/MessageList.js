@@ -4,7 +4,7 @@ chatroom style div as well as listening for when the send message button is clic
 then saving the sent message to the database and re-rendering the message list to immediately
 display the new message. */
 
-import { useUsers } from './userProvider.js'
+import { useUsers } from '../register/usersDataProvider.js'
 import { useMessages, saveNewMessage } from './messageProvider.js'
 import { NewMessageFormHTML } from './NewMessageFormHTML.js'
 import { MessageHTML } from './MessageHTML.js'
@@ -22,7 +22,9 @@ export const MessageList = () => {
 const render = () => {
   const users = useUsers()
   const messages = useMessages()
+
   const sortedMessages = messages.sort((a, b) => a.timestamp - b.timestamp)
+
   messagecontentTarget.innerHTML = sortedMessages
     .map((message) => {
       let foundUser = users.find((user) => user.id === message.userId)
