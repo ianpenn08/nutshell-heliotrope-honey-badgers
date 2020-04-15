@@ -12,7 +12,7 @@ contentTarget.addEventListener("click", event => {
         const TaskEvent = new CustomEvent("addTaskButtonClicked",{
             detail: {
                 task: taskName,
-                userId: "",
+                userId: parseInt(sessionStorage.getItem("activeUser")),
                 completed: completed,
                 completionDate: completionDate
             }

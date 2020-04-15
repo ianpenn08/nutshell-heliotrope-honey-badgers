@@ -15,6 +15,7 @@ const contentTarget = document.querySelector(".tasksContainer")
 const eventHub = document.querySelector("#container")
 const addButtonTarget = document.querySelector(".addTaskButtonContainer")
 
+
 eventHub.addEventListener("click", deleteClickEvent => {
     if (deleteClickEvent.target.id.startsWith("deleteTask--")) {
         const [prefix, id] = deleteClickEvent.target.id.split("--")
@@ -27,7 +28,7 @@ eventHub.addEventListener("click", deleteClickEvent => {
 eventHub.addEventListener("addTaskButtonClicked", event => {
     const newTask = {
         task: event.detail.task,
-        userId: 1,
+        userId: parseInt(sessionStorage.getItem("activeUser")),
         completed: event.detail.completed,
         completionDate: event.detail.completionDate
     }
