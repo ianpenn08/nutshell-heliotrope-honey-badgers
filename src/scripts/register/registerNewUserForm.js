@@ -2,7 +2,7 @@
 
 export const registerFormHTML = `
 <article class='registerContainer'>
-  <title class='registerTitle'>Login</title>/Register</title>
+  <h1 class='registerTitle'>Register</h1>
   <section class='registerForm'>
     <form>
       <label for="registerUserName">Email/User name:</label>
@@ -11,9 +11,11 @@ export const registerFormHTML = `
       <input type="text" id="registerPassword1" name="registerPassword1">
       <label for="registerPassword2">Enter Password Again:</label>
       <input type="text" id="registerPassword2" name="registerPassword2">
+      <label for="registerEmail">Enter Email Address:</label>
+      <input type="text" id="registerEmail" name="registerEmail">
     </form>
-    <button class='registerButton'>register</button>
-    <button class='backButton'>Back to login</button>
+    <button id='registerUserButton'>register</button>
+    <button id='backButton'>Back to login</button>
   </section>  
 </article>
 `

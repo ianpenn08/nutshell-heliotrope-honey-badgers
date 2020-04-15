@@ -2,7 +2,7 @@
 let users = []
 
 export const getSavedUsers = () => {
-  return fetch('http://localhost:8088/Users')
+  return fetch('http://localhost:8088/users')
     //taking what was recieved(promise) and turning it into java
     .then(response => response.json())
     //taking that java and storing it then putting it in eateries

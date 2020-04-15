@@ -1,3 +1,6 @@
-import { renderLogin } from "./register/welcome.js";
+import { renderLogin, loginEvent, renderRegister } from "./register/welcome.js";
+import { getSavedUsers } from "./register/usersDataProvider.js";
+import "./register/existingUserLoginButton.js";
+import "./register/registerNewUserButton.js";
 
-renderLogin()
+getSavedUsers().then(renderLogin).then(loginEvent).then(renderRegister)
