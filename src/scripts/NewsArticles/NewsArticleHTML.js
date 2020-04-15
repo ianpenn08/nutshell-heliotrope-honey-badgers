@@ -11,7 +11,7 @@ export const Article = (articleObject) => {
                 <h2>${articleObject.title}</h2>
             </header>
             <p>${articleObject.synopsis}</p>
-            <p>${articleObject.website}</p>
+            <a href="${articleObject.website}" target="_blank">Article Website</a>
             <p>
             <button id="deleteArticle--${articleObject.id}">Delete</button>
             </p>

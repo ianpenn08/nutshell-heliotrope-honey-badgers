@@ -11,6 +11,7 @@ export const newArticle = () => {
     contentTarget.innerHTML = `
     <button type="button" id="newArticleButton">New Article</button>
    <dialog id="newArticleForm">
+            <h2>New Article</h2>
         <fieldset class="newArticle">
             <label for="title">Title</label>
             <input type="text" name="title" id="title">
@@ -21,7 +22,7 @@ export const newArticle = () => {
         </fieldset>
         <fieldset class="newArticle">
             <label for="website">Website</label>
-            <input type="url" name="website" id="website" value="url">
+            <input type="url" name="website" id="website">
         </fieldset>
         <button type="submit" id="articleSaveButton">Save Article</button>
         <button type="button" id="backButton">Back</button>
