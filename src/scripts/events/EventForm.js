@@ -35,7 +35,7 @@ export const EventForm = () => {
 }
 
 
-//Click event to save event entered into form
+//Click event to save event entered into form and then close form
 
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "eventSaveButton") {
@@ -43,6 +43,7 @@ contentTarget.addEventListener("click", clickEvent => {
         const name = document.querySelector("#eventName").value
         const date = document.querySelector("#eventDate").value
         const location = document.querySelector("#eventLocation").value
+        const newEventForm = document.querySelector("#newEventForm")
 
     
     const createEvent = {
@@ -51,7 +52,10 @@ contentTarget.addEventListener("click", clickEvent => {
             location: location
         }
 
-        saveEvent(createEvent)
+        if (name !== "" && date !== "" && location !== "") {
+            saveEvent(createEvent)
+            newEventForm.close()
+        } else alert("Please complete all fields")
     }
 })
 
@@ -64,11 +68,12 @@ contentTarget.addEventListener("click", clickEvent => {
     }
 })
 
-//Click event to close event form dialog
+//Click event to close event form dialog with back button
 
 contentTarget.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "backButton" || clickEvent.target.id === "eventSaveButton") {
+    if (clickEvent.target.id === "backButton") {
         const newEventForm = document.querySelector("#newEventForm")
         newEventForm.close()
     }
 })
+
