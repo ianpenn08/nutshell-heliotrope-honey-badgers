@@ -1,7 +1,7 @@
 import { getArticles, useArticles, deleteArticle } from "./newsProvider.js"
 import { Article } from "./NewsArticleHTML.js"
 
-const contentTarget = document.querySelector(".newsArticles")
+const contentTarget = document.querySelector(".newsArticleContainer")
 const eventHub = document.querySelector("#container")
 
 
