@@ -1,7 +1,7 @@
 // Author: Blake Slochowsky
 export const TaskDialog = () => {
 
-const contentTarget = document.querySelector(".container")
+const contentTarget = document.querySelector("#container")
 
 contentTarget.addEventListener("click", event => {
     if (event.target.id.startsWith("addTask--")) {

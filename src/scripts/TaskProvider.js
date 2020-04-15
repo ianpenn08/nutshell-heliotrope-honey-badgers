@@ -1,5 +1,5 @@
 // Author: Blake Slochowsky
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector("#container")
 
 let tasks = []
 

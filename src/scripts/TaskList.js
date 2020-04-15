@@ -4,7 +4,7 @@ import { TaskComponent } from "./TaskHTML.js"
 import { TaskForm } from "./TaskForm.js"
 
 const contentTarget = document.querySelector(".tasksContainer")
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector("#container")
 const addButtonTarget = document.querySelector(".addTaskButtonContainer")
 
 eventHub.addEventListener("click", deleteClickEvent => {

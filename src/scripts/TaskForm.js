@@ -1,6 +1,6 @@
 // Author: Blake Slochowsky
 const contentTarget = document.querySelector(".taskForm")
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector("#container")
 
 contentTarget.addEventListener("click", event => {
     const taskName = document.querySelector("#task-name").value
