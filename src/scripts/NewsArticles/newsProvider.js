@@ -1,3 +1,7 @@
+// Author: Ian Penn
+// Purpose: fetch calls from api to save,delete, or get articles
+
+
 let articles = []
 
 const eventHub = document.querySelector("#container")
@@ -8,8 +12,7 @@ const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(articleStateChangedEvent)
 }
 
-
-export const useArticles = () => articles.sort((c,n) => n.timestamp - c.timestamp).slice()
+export const useArticles = () => articles.slice()
 
 export const getArticles = () => {
     return fetch('http://localhost:8088/news')

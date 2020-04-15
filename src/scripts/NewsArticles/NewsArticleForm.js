@@ -1,3 +1,8 @@
+// Author: Ian Penn
+// Purpose: create a dialog with save and back button and htmk reprsenation of new article
+
+
+
 import { saveArticle } from "./newsProvider.js"
 
 const contentTarget = document.querySelector(".newsArticleForm")

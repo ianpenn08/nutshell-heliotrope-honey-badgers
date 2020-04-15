@@ -1,3 +1,7 @@
+// Author: Ian Penn
+// Purpose: Uses newsProvider for imformation and makes its functional on the browser by returning the info in html representation
+
+
 import { getArticles, useArticles, deleteArticle } from "./newsProvider.js"
 import { Article } from "./NewsArticleHTML.js"
 
