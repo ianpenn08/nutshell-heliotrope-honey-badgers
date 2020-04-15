@@ -1,6 +1,6 @@
 // Author: Blake Slochowsky
+// Purpose: Single HTML rep. of a task object.
 export const TaskComponent = tasks => {
-    console.log("Indivudual OBJECT", tasks)
     return `
       <section id="taskCard">
         <div class="taskCardInfo">
@@ -8,8 +8,7 @@ export const TaskComponent = tasks => {
         <li id="dateToComplete--${tasks.id}">Date: ${tasks.completionDate}</li>
         <li>Completed Task?
         <input type="checkbox" id="checkbox--${tasks.id}">
-        </li>
-        </div>
+        </li></div>
         <button id="deleteTask--${tasks.id}">Delete Task</button>
-      </section>`
+        </section>`
 }

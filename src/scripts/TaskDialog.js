@@ -1,4 +1,5 @@
 // Author: Blake Slochowsky
+// Purpose: the purpose is this file is opening and closing of the dialog when the addTask button is clicked. 
 export const TaskDialog = () => {
 
 const contentTarget = document.querySelector("#container")

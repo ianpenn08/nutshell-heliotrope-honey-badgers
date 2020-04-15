@@ -1,4 +1,6 @@
 // Author: Blake Slochowsky
+// Purpose: Represent the HTML of the form, grab the value of the input boxes and implement the saveTask
+// custom event that dispatches the event to the eventHub.
 const contentTarget = document.querySelector(".taskForm")
 const eventHub = document.querySelector("#container")
 

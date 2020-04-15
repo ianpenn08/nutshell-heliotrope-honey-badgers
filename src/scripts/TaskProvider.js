@@ -1,4 +1,6 @@
 // Author: Blake Slochowsky
+// Purpose: Provide all the fetch calls that grab the data from our JSON server(API).
+// Also dispatch a custom event that when invoked will re render the task list using .then.
 const eventHub = document.querySelector("#container")
 
 let tasks = []
