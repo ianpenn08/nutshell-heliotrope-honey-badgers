@@ -67,7 +67,7 @@ contentTarget.addEventListener("click", clickEvent => {
 //Click event to close event form dialog
 
 contentTarget.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "backButton") {
+    if (clickEvent.target.id === "backButton" || clickEvent.target.id === "eventSaveButton") {
         const newEventForm = document.querySelector("#newEventForm")
         newEventForm.close()
     }

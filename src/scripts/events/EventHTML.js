@@ -1,6 +1,9 @@
 //Authored by Billy Blackman
 //The purpose of this component is to represent one event object with HTML
 
+import { deleteEvent, dispatchStateChangeEvent } from "./eventProvider.js"
+
+const contentTarget = document.querySelector(".eventsContainer")
 
 export const Event = (eventObject) => {
 	return `
@@ -13,3 +16,12 @@ export const Event = (eventObject) => {
 	`	
 }
 
+//Delete note event
+
+contentTarget.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteEvent--")) {
+        const [notUsing, eventId] = clickEvent.target.id.split("--")
+		deleteEvent(eventId)
+		dispatchStateChangeEvent()
+    }
+})

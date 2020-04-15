@@ -4,6 +4,7 @@
 import { useEvents } from "./eventProvider.js"
 import { Event } from "./EventHTML.js"
 
+const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector(".eventsContainer")
 
 //Function to display events
@@ -22,3 +23,9 @@ export const EventList = () => {
     }
     render()
 }
+
+//State change listener
+
+eventHub.addEventListener("eventStateChanged", customEvent => {
+    EventList()
+})

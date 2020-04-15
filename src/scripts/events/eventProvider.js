@@ -33,8 +33,8 @@ export const saveEvent = event => {
 
 //Function to delete an event
 
-export const deleteNote = noteId => {
-    return fetch(`http://localhost:8088/events/${noteId}`, {
+export const deleteEvent = eventId => {
+    return fetch(`http://localhost:8088/events/${eventId}`, {
         method: "DELETE"
     })
         .then(getEvents)
@@ -43,7 +43,7 @@ export const deleteNote = noteId => {
 
 //Event state change event
 
-const dispatchStateChangeEvent = () => {
+export const dispatchStateChangeEvent = () => {
     const eventStateChangedEvent = new CustomEvent("eventStateChanged")
     eventHub.dispatchEvent(eventStateChangedEvent)
 }
