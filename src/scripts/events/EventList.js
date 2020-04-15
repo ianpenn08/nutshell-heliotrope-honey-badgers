@@ -4,9 +4,9 @@
 import { useEvents } from "./eventProvider.js"
 import { Event } from "./EventHTML.js"
 
-//Function to display events
-
 const contentTarget = document.querySelector(".eventsContainer")
+
+//Function to display events
 
 export const EventList = () => {
 
