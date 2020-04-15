@@ -54,12 +54,11 @@ const render = () => {
                 return TaskComponent(task)
             }
         }
-        ).join("")}
-        ${TaskForm()}
-        `
+        ).join("")}`
+        TaskForm()
     })
 }
-render()
+
 
 
 contentTarget.addEventListener("click", event => {
