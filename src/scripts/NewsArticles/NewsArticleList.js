@@ -22,8 +22,6 @@ eventHub.addEventListener("articleStateChanged", customEvent => {
 
 
 const render = () => {
-
-    getArticles().then(() => {
         const allTheArticles = useArticles()
 
         contentTarget.innerHTML = allTheArticles.map(
@@ -32,8 +30,8 @@ const render = () => {
                 return Article(currentArticleObject)
             }
         ).join("")
-    })
-}
+    }
+
 
 export const ArticlesList = () => {
     render()
