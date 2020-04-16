@@ -8,7 +8,7 @@ import "./register/registerNewUserButton.js";
 
 getSavedUsers().then(renderLogin).then(loginEvent).then(renderRegister)
 
-
-getEvents()
+getSavedUsers()
+    .then(getEvents)
     .then(EventForm)
     .then(EventList)

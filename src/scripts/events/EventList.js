@@ -12,21 +12,28 @@ const contentTarget = document.querySelector(".eventsContainer")
 
 export const EventList = () => {
 
+    const render = () => {
+
     const allTheUsers = useUsers()
     const theActiveUserId = parseInt(sessionStorage.activeUser)
     const theActiveUser = allTheUsers.find(user => theActiveUserId === user.id)
     const allTheEvents = useEvents()
     const theMatchingEvents = allTheEvents.filter( event => theActiveUser.id === event.userId)
     const theSortedMatchingEvents = theMatchingEvents.sort((a, b) => a.dateTimeStamp - b.dateTimeStamp)
+    
 
-    const render = () => {
         contentTarget.innerHTML = theSortedMatchingEvents.map( eventObject => {
             
             return Event(eventObject) 
         })
         .join(`<br>`)
     }
-    render()
+
+//Render is invoked after the user has logged in
+
+    eventHub.addEventListener('userChosen', (event) => {
+        render()
+    })
 }
 
 //State change listener
@@ -35,9 +42,3 @@ eventHub.addEventListener("eventStateChanged", customEvent => {
     EventList()
 })
 
-
-// contentTarget.innerHTML = allTheEvents.map( eventObject => {
-
-//     return Event(eventObject)
-// })
-// .join(`<br>`)

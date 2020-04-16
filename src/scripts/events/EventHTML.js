@@ -27,6 +27,8 @@ contentTarget.addEventListener("click", clickEvent => {
     }
 })
 
+//Event to show the events container only after a user has been chosen
+
 eventHub.addEventListener('userChosen', (event) => {
 	contentTarget.classList.remove("hidden")
   })
