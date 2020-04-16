@@ -2,25 +2,6 @@
 // Purpose: Represent the HTML of the form, grab the value of the input boxes and implement the saveTask
 // custom event that dispatches the event to the eventHub.
 const contentTarget = document.querySelector(".taskForm")
-const eventHub = document.querySelector("#container")
-
-contentTarget.addEventListener("click", event => {
-    const taskName = document.querySelector("#task-name").value
-    const completionDate = document.querySelector("#task-date").value
-    const completed = false
-    if(event.target.id === 'saveTask'){
-        const TaskEvent = new CustomEvent("addTaskButtonClicked",{
-            detail: {
-                task: taskName,
-                userId: "",
-                completed: completed,
-                completionDate: completionDate
-            }
-        })
-        eventHub.dispatchEvent(TaskEvent)
-    }
-})
-
 
 export const TaskForm = () => {
     const render = () => {

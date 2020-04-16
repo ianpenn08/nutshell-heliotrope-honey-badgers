@@ -7,10 +7,10 @@ import { renderLogin, loginEvent, renderRegister, registerEvent} from "./registe
 import { getSavedUsers } from './register/usersDataProvider.js'
 import './register/existingUserLoginButton.js'
 import './register/registerNewUserButton.js'
-import { getTasks } from './TaskProvider.js'
-import { TaskList } from './TaskList.js'
-import { TaskForm } from './TaskForm.js'
-import { TaskDialog } from './TaskDialog.js'
+import { getTasks } from './tasks/TaskProvider.js'
+import { TaskList } from './tasks/TaskList.js'
+import { TaskForm } from './tasks/TaskForm.js'
+import { TaskDialog } from './tasks/TaskDialog.js'
 
 getSavedUsers()
   .then(renderLogin)
