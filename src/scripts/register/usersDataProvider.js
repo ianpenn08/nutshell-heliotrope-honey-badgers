@@ -40,14 +40,6 @@ export const deleteUser = userId => {
   .then(dispatchStateChangeEvent)
 }
 
-export const getActiveUser = (userId) =>
-  fetch(`http://localhost:8088/users/${userId}`)
-    .then((res) => res.json())
-    .then((parsedUser) => {
-      activeUser = parsedUser.id
-      sessionStorage.setItem('activeUser', activeUser)
-})
-
 
 export const useUsers = () => users.slice()
 

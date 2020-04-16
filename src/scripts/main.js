@@ -3,7 +3,7 @@ import { EventList } from "./events/EventList.js"
 import { EventForm } from "./events/EventForm.js"
 import { getMessages } from './messages/messageProvider.js'
 import { MessageList } from './messages/MessageList.js'
-import { renderLogin, loginEvent, renderRegister } from './register/welcome.js'
+import { renderLogin, loginEvent, renderRegister, registerEvent} from "./register/welcome.js";
 import { getSavedUsers } from './register/usersDataProvider.js'
 import './register/existingUserLoginButton.js'
 import './register/registerNewUserButton.js'
@@ -16,6 +16,7 @@ getSavedUsers()
   .then(renderLogin)
   .then(loginEvent)
   .then(renderRegister)
+  .then(registerEvent)
   .then(getMessages)
   .then(MessageList)
   .then(getTasks)
