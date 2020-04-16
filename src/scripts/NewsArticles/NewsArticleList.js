@@ -8,21 +8,21 @@ import { useUsers } from "../register/usersDataProvider.js"
 
 const contentTarget = document.querySelector(".newsArticleContainer")
 const eventHub = document.querySelector("#container")
-// const articleContentTarget = document.querySelector(
-//     '.newsArticleForm'
-//   )
 
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteArticle--")) {
         const [_, articleId] = clickEvent.target.id.split("--")
         deleteArticle(articleId)
+        dispatchStateChangeEvent()
     }
 })
 
 eventHub.addEventListener("articleStateChanged", customEvent => {
     render()
 })
-
+eventHub.addEventListener('userChosen', (event) => {
+	contentTarget.classList.remove("hidden")
+  })
 
 const render = () => {
     const allTheUsers = useUsers()
@@ -47,6 +47,7 @@ const render = () => {
 
 
 export const ArticlesList = () => {
+    
     render()
 }
 

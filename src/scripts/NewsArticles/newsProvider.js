@@ -6,7 +6,7 @@ let articles = []
 
 const eventHub = document.querySelector("#container")
 
-const dispatchStateChangeEvent = () => {
+export const dispatchStateChangeEvent = () => {
     const articleStateChangedEvent = new CustomEvent("articleStateChanged")
 
     eventHub.dispatchEvent(articleStateChangedEvent)

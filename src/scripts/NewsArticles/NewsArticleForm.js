@@ -58,7 +58,7 @@ contentTarget.addEventListener("click", clickEvent => {
 })
 
 contentTarget.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "backButton") {
+    if (clickEvent.target.id === "backButton" || clickEvent.target.id === "articleSaveButton" ) {
         const newArticleForm = document.querySelector("#newArticleForm")
         newArticleForm.close()
     }
