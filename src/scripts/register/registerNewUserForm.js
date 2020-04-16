@@ -5,7 +5,7 @@ export const registerFormHTML = `
   <h1 class='registerTitle'>Register</h1>
   <section class='registerForm'>
     <form>
-      <label for="registerUserName">Email/User name:</label>
+      <label for="registerUserName">User name:</label>
       <input type="text" id="registerUserName" name="registerUserName">
       <label for="registerPassword1">Enter Password:</label>
       <input type="text" id="registerPassword1" name="registerPassword1">
