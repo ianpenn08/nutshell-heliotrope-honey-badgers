@@ -26,9 +26,9 @@ eventHub.addEventListener("click", clickEvent => {
     if(registerUserName !== '' && registerEmail !== '' && registerUserPassword1 !== '' && registerUserPassword2 !== '') {
       if(registerUserPassword1 === registerUserPassword2) {
         const tempUser = {
-          "username": registerUserName,
-          "email": registerEmail,
-          "password": registerUserPassword1
+          username: registerUserName,
+          email: registerEmail,
+          password: registerUserPassword1
         }
 
         saveUser(tempUser)
@@ -37,8 +37,6 @@ eventHub.addEventListener("click", clickEvent => {
             detail: {
               registerUser: registerUserName,
               registerPassword: registerUserPassword1,
-              registerPassword: registerEmail
-  
             }
           })
           
