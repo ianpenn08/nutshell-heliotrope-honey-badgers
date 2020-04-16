@@ -17,9 +17,10 @@ export const EventList = () => {
     const theActiveUser = allTheUsers.find(user => theActiveUserId === user.id)
     const allTheEvents = useEvents()
     const theMatchingEvents = allTheEvents.filter( event => theActiveUser.id === event.userId)
+    const theSortedMatchingEvents = theMatchingEvents.sort((a, b) => a.dateTimeStamp - b.dateTimeStamp)
 
     const render = () => {
-        contentTarget.innerHTML = theMatchingEvents.map( eventObject => {
+        contentTarget.innerHTML = theSortedMatchingEvents.map( eventObject => {
             
             return Event(eventObject) 
         })
