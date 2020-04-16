@@ -8,11 +8,6 @@ const dispatchStateChangeEvent = () => {
   eventHub.dispatchEvent(userStateChangeEvent)
 }
 
-const setSessionId = (sessionUser) => {
-  sessionStorage.setItem('activeUser', sessionUser.id)
-
-}
-
 export const getSavedUsers = () => {
   return fetch('http://localhost:8088/users')
     //taking what was recieved(promise) and turning it into java
@@ -47,3 +42,4 @@ export const deleteUser = userId => {
 
 
 export const useUsers = () => users.slice()
+

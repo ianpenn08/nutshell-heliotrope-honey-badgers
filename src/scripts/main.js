@@ -1,3 +1,6 @@
+import { getEvents } from "./events/eventProvider.js"
+import { EventList } from "./events/EventList.js"
+import { EventForm } from "./events/EventForm.js"
 import { getMessages } from './messages/messageProvider.js'
 import { MessageList } from './messages/MessageList.js'
 import { renderLogin, loginEvent, renderRegister, registerEvent} from "./register/welcome.js";
@@ -20,3 +23,7 @@ getSavedUsers()
   .then(TaskList)
   .then(TaskForm)
   .then(TaskDialog)
+  .then(getEvents)
+  .then(EventForm)
+  .then(EventList)
+
