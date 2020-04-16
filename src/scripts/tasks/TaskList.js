@@ -28,12 +28,20 @@ eventHub.addEventListener("addTaskButtonClicked", event => {
     saveTask(newTask)
 })
 
-eventHub.addEventListener('userChosen', (event) => {
+eventHub.addEventListener("userChosen", (event) => {
     addButtonTarget.innerHTML = `
     <button id="addTask--">Add Task </button>`
+    contentTarget.classList.remove("hidden")
+    render()
 })
 
+  eventHub.addEventListener("newUser", (event) => {
+    addButtonTarget.innerHTML = `
+    <button id="addTask--">Add Task </button>`
+    contentTarget.classList.remove("hidden")
+})
 
+    
 const render = () => {
     const currentUserId = sessionStorage.getItem("activeUser")
     const tasks = useTasks()
