@@ -4,6 +4,7 @@
 import { deleteEvent, dispatchStateChangeEvent } from "./eventProvider.js"
 
 const contentTarget = document.querySelector(".eventsContainer")
+const eventHub = document.querySelector("#container")
 
 export const Event = (eventObject) => {
 	return `
@@ -27,3 +28,7 @@ contentTarget.addEventListener("click", clickEvent => {
 		dispatchStateChangeEvent()
     }
 })
+
+eventHub.addEventListener('userChosen', (event) => {
+	contentTarget.classList.remove("hidden")
+  })

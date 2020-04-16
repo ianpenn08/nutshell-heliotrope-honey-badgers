@@ -4,6 +4,7 @@
 import { saveEvent } from "./eventProvider.js"
 
 const contentTarget = document.querySelector(".eventsFormContainer")
+const eventHub = document.querySelector("#container")
 
 export const EventForm = () => {
     contentTarget.innerHTML = `
@@ -63,7 +64,8 @@ contentTarget.addEventListener("click", clickEvent => {
             name: name,
             date: date,
             dateTimeStamp: dateTimeStamp,
-            location: location
+            location: location,
+            userId: parseInt(sessionStorage.activeUser)
         }
 
 //If statement to check if all form fields are complete and alert user if they are not
@@ -93,3 +95,8 @@ contentTarget.addEventListener("click", clickEvent => {
     }
 })
 
+//Event to show event form button only after user has logged in
+
+eventHub.addEventListener('userChosen', (event) => {
+        contentTarget.classList.remove("hidden")
+      })
