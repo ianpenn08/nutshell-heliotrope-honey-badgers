@@ -39,11 +39,10 @@ export const registerEvent = () => {
     newUser.registerPassword = event.detail.registerPassword
   })
 
-  eventHub.addEventListener('userStateChanged', (event) => {
+  eventHub.addEventListener('userStateChanged', () => {
     const allNewUsers = useUsers()
   
     const foundNewUser = allNewUsers.find(user => user.username === newUser.registerUsername)
-    debugger
 
     if(foundNewUser !== null) {
       sessionStorage.setItem('activeUser', foundNewUser.id)
