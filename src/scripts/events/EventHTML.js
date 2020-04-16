@@ -31,4 +31,9 @@ contentTarget.addEventListener("click", clickEvent => {
 
 eventHub.addEventListener('userChosen', (event) => {
 	contentTarget.classList.remove("hidden")
-  })
+})
+
+//Event to show event container after user has registered
+eventHub.addEventListener("newUser", (event) => {
+  contentTarget.classList.remove("hidden")
+})

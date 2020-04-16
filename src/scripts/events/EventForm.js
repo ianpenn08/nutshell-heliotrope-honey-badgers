@@ -98,5 +98,10 @@ contentTarget.addEventListener("click", clickEvent => {
 //Event to show event form button only after user has logged in
 
 eventHub.addEventListener('userChosen', (event) => {
-        contentTarget.classList.remove("hidden")
-      })
+  contentTarget.classList.remove("hidden")
+})
+
+//Event to show event container after user has registered
+eventHub.addEventListener("newUser", (event) => {
+  contentTarget.classList.remove("hidden")
+})
