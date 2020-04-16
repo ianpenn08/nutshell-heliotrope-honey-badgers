@@ -25,10 +25,14 @@ eventHub.addEventListener("articleStateChanged", customEvent => {
 
 
 const render = () => {
-    const users = useUsers()
+    const allTheUsers = useUsers()
+    const theActiveUserId = parseInt(sessionStorage.activeUser)
+    const theActiveUser = allTheUsers.find(user => theActiveUserId === user.id)
     const articles = useArticles()
     const allTheArticles = articles.sort((a, b) => a.timestamp - b.timestamp)
-        contentTarget.innerHTML = allTheArticles.map(
+    const theMatchingArticles = allTheArticles.filter( article => theActiveUser.id === article.userId)
+    const theSortedMatchingArticles = theMatchingArticles.sort((a, b) => a.dateTimeStamp - b.dateTimeStamp)
+        contentTarget.innerHTML = theSortedMatchingArticles.map(
             (currentArticleObject) => {
                 let foundUser = users.find((user) => user.id === currentArticleObject.userId)
 
@@ -37,6 +41,10 @@ const render = () => {
         ).join("")
 
     }
+
+    eventHub.addEventListener('userChosen', (event) => {
+        render()
+    })
 
 
 export const ArticlesList = () => {
