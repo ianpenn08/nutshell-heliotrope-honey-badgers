@@ -48,3 +48,13 @@ eventHub.addEventListener('messageStateChanged', () => {
   render()
   messagecontentTarget.scrollTop = messagecontentTarget.scrollHeight
 })
+
+eventHub.addEventListener('userChosen', (event) => {
+  messagecontentTarget.classList.remove('hidden')
+  messageInputContentTarget.classList.remove('hidden')
+})
+
+eventHub.addEventListener('newUser', (event) => {
+  messagecontentTarget.classList.remove('hidden')
+  messageInputContentTarget.classList.remove('hidden')
+})
