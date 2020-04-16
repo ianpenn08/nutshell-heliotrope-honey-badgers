@@ -11,7 +11,12 @@ const contentTarget = document.querySelector(".eventsContainer")
 //Function to display events
 
 export const EventList = () => {
-    render()
+    
+    //Render is invoked after the user has logged in
+        
+        eventHub.addEventListener('userChosen', (event) => {
+            render()
+        })
 }
 
 //State change listener
@@ -24,7 +29,8 @@ eventHub.addEventListener("eventStateChanged", customEvent => {
 const render = () => {
     
     const allTheUsers = useUsers()
-    const theActiveUserId = parseInt(sessionStorage.activeUser)
+    const theSessionUser = sessionStorage.getItem("activeUser")
+    const theActiveUserId = parseInt(theSessionUser)
     const theActiveUser = allTheUsers.find(user => theActiveUserId === user.id)
     const allTheEvents = useEvents()
     const theMatchingEvents = allTheEvents.filter( event => theActiveUser.id === event.userId)
@@ -38,8 +44,6 @@ const render = () => {
     .join(`<br>`)
 }
 
-//Render is invoked after the user has logged in
-    
-    eventHub.addEventListener('userChosen', (event) => {
-        render()
-    })
+
+//Render is invoked when the user list has been updated
+eventHub.addEventListener('userStateChanged', () => render())
