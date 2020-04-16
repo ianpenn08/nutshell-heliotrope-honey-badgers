@@ -16,7 +16,6 @@ export const loginEvent = () => {
 
   eventHub.addEventListener('userChosen', (event) => {
     const foundUser = allUsers.find(user => user.username === event.detail.user)
-    console.log(foundUser)
 
     if(foundUser !== null) {
       if(foundUser.password === event.detail.userPassword){
