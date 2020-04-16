@@ -29,15 +29,8 @@ eventHub.addEventListener("addTaskButtonClicked", event => {
 })
 
 eventHub.addEventListener('userChosen', (event) => {
-    contentTarget.classList.remove("hidden")
     addButtonTarget.innerHTML = `
     <button id="addTask--">Add Task </button>`
-})
-
-
-
-eventHub.addEventListener("taskCreated", click => {
-    render()
 })
 
 
@@ -86,7 +79,6 @@ eventHub.addEventListener("taskStateEventChanged", event => {
 
 export const TaskList = () => {
     eventHub.addEventListener("userChosen", (event) => {
-        contentTarget.classList.remove("hidden")
         render()
     })
 }
