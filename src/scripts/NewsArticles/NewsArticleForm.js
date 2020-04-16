@@ -40,6 +40,7 @@ contentTarget.addEventListener("click", clickEvent => {
 
     
     const createArticle = {
+            userId: parseInt(sessionStorage.activeUser),
             title: title,
             synopsis: synopsis,
             website: website
