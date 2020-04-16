@@ -38,7 +38,7 @@ eventHub.addEventListener("addTaskButtonClicked", event => {
 
 
 addButtonTarget.innerHTML = `
-<button id="addTask--">Add Task</button>`
+<button id="addTask--">Add Task </button>`
 
 
 eventHub.addEventListener("taskCreated", click => {
