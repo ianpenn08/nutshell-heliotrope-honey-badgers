@@ -26,3 +26,28 @@ export const loginEvent = () => {
     }
   })
 }
+
+
+export const registerEvent = () => {
+  let newUser = {
+    registerUsername: '',
+    registerUserPassword: ''
+  }
+
+  eventHub.addEventListener('newUser', (event) => {
+    newUser.registerUsername = event.detail.registerUser
+    newUser.registerPassword = event.detail.registerPassword
+  })
+
+  eventHub.addEventListener('userStateChanged', () => {
+    const allNewUsers = useUsers()
+  
+    const foundNewUser = allNewUsers.find(user => user.username === newUser.registerUsername)
+
+    if(foundNewUser !== null) {
+      sessionStorage.setItem('activeUser', foundNewUser.id)
+
+      registerTarget.classList.add('hidden')
+    }
+  })
+}

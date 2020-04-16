@@ -2,7 +2,7 @@
 
 export const loginFormHTML = `
 <article class='loginContainer'>
-  <title class='loginTitle'>Login/Register</title>
+  <h1 class='loginTitle'>Login Form</h1>
   <section class='loginForm'>
     <form>
       <label for="loginUserName">User name:</label>
