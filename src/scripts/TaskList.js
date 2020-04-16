@@ -10,6 +10,7 @@
 import { useTasks, deleteTask, getTasks, saveTask, updateTask } from "./TaskProvider.js"
 import { TaskComponent } from "./TaskHTML.js"
 import { TaskForm } from "./TaskForm.js"
+import { useUsers } from "./register/usersDataProvider.js"
 
 const contentTarget = document.querySelector(".tasksContainer")
 const eventHub = document.querySelector("#container")
@@ -73,7 +74,7 @@ contentTarget.addEventListener("click", event => {
         const newTask = {
             id: taskId,
             task: taskName,
-            userId: 2,
+            userId: parseInt(sessionStorage.getItem("activeUser")),
             completed: completed,
             completionDate: completedDate
         }
