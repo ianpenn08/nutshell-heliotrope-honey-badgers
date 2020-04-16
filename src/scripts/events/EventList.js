@@ -11,9 +11,18 @@ const contentTarget = document.querySelector(".eventsContainer")
 //Function to display events
 
 export const EventList = () => {
+    render()
+}
 
-    const render = () => {
+//State change listener
 
+eventHub.addEventListener("eventStateChanged", customEvent => {
+    render()
+})
+
+
+const render = () => {
+    
     const allTheUsers = useUsers()
     const theActiveUserId = parseInt(sessionStorage.activeUser)
     const theActiveUser = allTheUsers.find(user => theActiveUserId === user.id)
@@ -21,24 +30,16 @@ export const EventList = () => {
     const theMatchingEvents = allTheEvents.filter( event => theActiveUser.id === event.userId)
     const theSortedMatchingEvents = theMatchingEvents.sort((a, b) => a.dateTimeStamp - b.dateTimeStamp)
     
-
-        contentTarget.innerHTML = theSortedMatchingEvents.map( eventObject => {
-            
-            return Event(eventObject) 
-        })
-        .join(`<br>`)
-    }
+    
+    contentTarget.innerHTML = theSortedMatchingEvents.map( eventObject => {
+        
+        return Event(eventObject) 
+    })
+    .join(`<br>`)
+}
 
 //Render is invoked after the user has logged in
-
+    
     eventHub.addEventListener('userChosen', (event) => {
         render()
     })
-}
-
-//State change listener
-
-eventHub.addEventListener("eventStateChanged", customEvent => {
-    EventList()
-})
-
