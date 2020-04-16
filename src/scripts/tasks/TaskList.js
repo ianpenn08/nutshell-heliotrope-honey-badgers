@@ -34,11 +34,12 @@ eventHub.addEventListener('userChosen', (event) => {
     contentTarget.classList.remove("hidden")
     render()
 })
+
   eventHub.addEventListener("newUser", (event) => {
     addButtonTarget.innerHTML = `
     <button id="addTask--">Add Task </button>`
     contentTarget.classList.remove("hidden")
-  })
+})
 
     
 const render = () => {
