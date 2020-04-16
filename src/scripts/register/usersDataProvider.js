@@ -1,6 +1,13 @@
 // Author: Traye Johson
 let users = []
 
+const eventHub = document.querySelector('#container')
+
+const dispatchStateChangeEvent = () => {
+  const userStateChangeEvent = new CustomEvent('userStateChanged')
+  eventHub.dispatchEvent(userStateChangeEvent)
+}
+
 export const getSavedUsers = () => {
   return fetch('http://localhost:8088/users')
     //taking what was recieved(promise) and turning it into java

@@ -10,7 +10,6 @@
 import { useTasks, deleteTask, getTasks, saveTask, updateTask } from "./TaskProvider.js"
 import { TaskComponent } from "./TaskHTML.js"
 import { TaskForm } from "./TaskForm.js"
-import { useUsers } from "./register/usersDataProvider.js"
 
 const contentTarget = document.querySelector(".tasksContainer")
 const eventHub = document.querySelector("#container")
@@ -42,24 +41,24 @@ addButtonTarget.innerHTML = `
 
 
 eventHub.addEventListener("taskCreated", click => {
-    const updatedTask = useTasks()
-    render(updatedTask)
+    render()
 })
 
 
 const render = () => {
-    getTasks().then(() => {
-        const tasks = useTasks()
-        contentTarget.innerHTML = `
-        ${tasks.map(task => {
-            if (task.completed !== true) {
-                return TaskComponent(task)
-            }
+    const currentUserId = sessionStorage.getItem("activeUser")
+    const tasks = useTasks()
+    const filteredUserTasks = tasks.filter(userTask => userTask.userId === parseInt(currentUserId));
+    contentTarget.innerHTML = `
+        ${filteredUserTasks.map(task => {
+        if (task.completed !== true) {
+            return TaskComponent(task, filteredUserTasks)
         }
-        ).join("")}`
-        TaskForm()
-    })
+    }
+    ).join("")}`
+    TaskForm()
 }
+
 
 
 
@@ -84,11 +83,30 @@ contentTarget.addEventListener("click", event => {
 
 
 eventHub.addEventListener("taskStateEventChanged", event => {
-    TaskList()
+    render()
 })
 
 
+
 export const TaskList = () => {
-    const tasks = useTasks()
-    render(tasks)
+    eventHub.addEventListener("userChosen", (event) => {
+        render()
+    })
 }
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id === 'saveTask') {
+        const taskName = document.querySelector("#task-name").value
+        const completionDate = document.querySelector("#task-date").value
+        const completed = false
+        const TaskEvent = new CustomEvent("addTaskButtonClicked", {
+            detail: {
+                task: taskName,
+                userId: parseInt(sessionStorage.getItem("activeUser")),
+                completed: completed,
+                completionDate: completionDate
+            }
+        })
+        eventHub.dispatchEvent(TaskEvent)
+    }
+})
