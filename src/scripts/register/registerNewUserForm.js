@@ -2,7 +2,7 @@
 
 export const registerFormHTML = `
 <article class='registerContainer'>
-  <h1 class='registerTitle'>Register</h1>
+  <h1 class='registerTitle'>Register Form</h1>
   <section class='registerForm'>
     <form>
       <label for="registerUserName">User name:</label>

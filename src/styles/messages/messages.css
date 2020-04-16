@@ -1,0 +1,41 @@
+.messagesContainer {
+  width: 30vw;
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  border: 1px solid darkorchid;
+  padding: 5px;
+  background-color: #eee;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+}
+
+.username {
+  margin: 5px 50px 0 0;
+}
+
+.messageInputContainer {
+  display: flex;
+  flex-direction: row;
+  width: 31vw;
+}
+
+.messageInputContainer__messagingSection {
+  width: 31vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+#messageInput {
+  width: 25vw;
+  height: 25px;
+  margin: 5px 18px 5px 0;
+}
+
+#sendMessageButton {
+  height: 30px;
+  margin: 5px 2px 5px auto;
+}

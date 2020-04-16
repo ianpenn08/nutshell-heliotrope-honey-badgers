@@ -12,6 +12,11 @@ eventHub.addEventListener("click", clickEvent => {
     registerTarget.classList.remove('hidden')
     loginTarget.classList.add('hidden')
   }
+
+  if (clickEvent.target.id === "backButton") {
+    registerTarget.classList.add('hidden')
+    loginTarget.classList.remove('hidden')
+  }
 })
 
 
