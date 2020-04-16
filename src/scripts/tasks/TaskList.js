@@ -28,7 +28,7 @@ eventHub.addEventListener("addTaskButtonClicked", event => {
     saveTask(newTask)
 })
 
-eventHub.addEventListener('userChosen', (event) => {
+eventHub.addEventListener("userChosen", (event) => {
     addButtonTarget.innerHTML = `
     <button id="addTask--">Add Task </button>`
     contentTarget.classList.remove("hidden")
