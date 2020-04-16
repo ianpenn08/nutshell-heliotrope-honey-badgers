@@ -34,9 +34,8 @@ const render = () => {
     const theSortedMatchingArticles = theMatchingArticles.sort((a, b) => a.dateTimeStamp - b.dateTimeStamp)
         contentTarget.innerHTML = theSortedMatchingArticles.map(
             (currentArticleObject) => {
-                let foundUser = users.find((user) => user.id === currentArticleObject.userId)
-
-                return Article(currentArticleObject, foundUser)
+            
+                return Article(currentArticleObject)
             }
         ).join("")
 
