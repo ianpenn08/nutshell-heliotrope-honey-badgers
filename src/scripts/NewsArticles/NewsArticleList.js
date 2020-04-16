@@ -41,14 +41,12 @@ const render = () => {
 
     }
 
-    eventHub.addEventListener('userChosen', (event) => {
-        render()
-    })
-
 
 export const ArticlesList = () => {
+    eventHub.addEventListener('userChosen', (event) => {
+        render()
+      })
     
-    render()
 }
 
 export default ArticlesList

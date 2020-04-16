@@ -9,7 +9,7 @@ contentTarget.addEventListener("click", event => {
         const theDialog = document.querySelector(".dialog--form")
         theDialog.showModal()
     }
-    if (event.target.id === "closeDialog") {
+    if (event.target.id === "closeDialog" || event.target.id === ("saveTask")) {
         const dialogElement = document.querySelector(".dialog--form")
         dialogElement.close()
     }

@@ -9,6 +9,6 @@ export const TaskComponent = tasks => {
         <li>Completed Task?
         <input type="checkbox" id="checkbox--${tasks.id}">
         </li></div>
-        <button id="deleteTask--${tasks.id}">Delete Task</button>
+        <button id="deleteTask--${tasks.id}">Delete Task 🤢</button>
         </section>`
 }
