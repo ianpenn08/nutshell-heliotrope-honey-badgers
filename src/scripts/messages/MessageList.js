@@ -22,9 +22,7 @@ export const MessageList = () => {
 const render = () => {
   const users = useUsers()
   const messages = useMessages()
-
   const sortedMessages = messages.sort((a, b) => a.timestamp - b.timestamp)
-
   messagecontentTarget.innerHTML = sortedMessages
     .map((message) => {
       let foundUser = users.find((user) => user.id === message.userId)
